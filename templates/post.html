@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('static/assets/img/post-bg.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="post-heading">
+                    <h1>ALL POSTS</h1>
+                    <h2 class="subheading">Place where you will find all the posts</h2>
+                    <span class="meta">
+
+                        <a href="#!"></a>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>
+<!-- Post Content-->
+{% for post in newest_posts %}
+<div class="post-preview">
+    <a href="post.html">
+        <h2 class="post-title">{{ post.val().title }}</h2>
+        <h3 class="post-subtitle">{{ post.val().subtitle }}</h3>
+    </a>
+    <p class="post-meta">
+        Posted by
+        <a href="#!">{{ post.val().author }}</a>
+        on {{ post.val().date }}
+    </p>
+</div>
+<hr class="my-4" />
+{% endfor %}
+<article class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+
+            </div>
+        </div>
+    </div>
+</article>
+{% endblock %}
